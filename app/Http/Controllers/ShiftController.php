@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class ShiftController extends Controller
 {
+    //user
+    public function user(User $user)
+    {
+        return view('shifts/user')->with(['users' => $user->getPaginateByLimit(10)]);
+    }
+    
     //index
     public function index(Offer $offer)
     {
